@@ -1,0 +1,143 @@
+print("divya");
+
+     
+sruthi
+
+for i in range(10):
+  print("divya");
+     
+sruthi
+sruthi
+sruthi
+sruthi
+sruthi
+sruthi
+sruthi
+sruthi
+sruthi
+sruthi
+
+
+     
+
+matrix=[[1,2],[3,4]];
+print(matrix);
+     
+[[1, 2], [3, 4]]
+
+matrix=[[1,2],
+        [3,4]];
+for row in matrix:
+  for element in row:
+    print(element);
+
+     
+1
+2
+3
+4
+
+import numpy as np
+matrix=np.array([[1,2],[3,4]]);
+matrix1=np.array([[5,6],[7,8]]);
+result=matrix+matrix1;
+print(result);
+     
+[[ 6  8]
+ [10 12]]
+
+class Node:
+  def __init__(self,data):
+    self.data=data
+    self.left=None
+    self.right=None
+def inorder(root):
+  if root is None:
+    return
+  inorder(root.left)
+  print(root.data,end="")
+  inorder(root.right)
+  #creating tree
+root=Node(1)
+root.left=Node(2)
+root.right=Node(3)
+root.left.left=Node(4)
+root.left.right=Node(5)
+inorder(root)
+
+     
+42513
+
+graph={
+    'A':['B','C'],
+    'B':[],
+    'C':[]
+}
+visited=set()
+def dfs(node):
+  if node not in visited:
+    print(node,end="")
+    visited.add(node)
+    for neighbour in graph[node]:
+      dfs(neighbour)
+print("DFS Traversal:")
+dfs('A')
+     
+DFS Traversal:
+ABC
+
+from collections import deque
+graph={
+    'A':['B','C'],
+    'B':[],
+    'C':[]
+}
+visited=set()
+queue=deque()
+start='A'
+queue.append(start)
+print("BFS Traversal :")
+while queue:
+  node=queue.popleft()
+  if node not in visited:
+    print(node,end="")
+    visited.add(node)
+    for neighbour in graph[node]:
+
+        queue.append(neighbour)
+     
+BFS Traversal :
+ABC
+
+from collections import deque
+
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': [],
+    'F': []
+}
+
+visited = set()
+
+def bfs(start):
+    queue = deque([start])
+    visited.add(start)
+
+    while queue:
+        node = queue.popleft()
+        print(node, end=" ")
+
+        for neighbour in graph[node]:
+            if neighbour not in visited:
+                visited.add(neighbour)
+                queue.append(neighbour)
+
+print("BFS Traversal:")
+bfs('A')
+
+     
+BFS Traversal:
+A B C D E F
